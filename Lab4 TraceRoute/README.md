@@ -12,14 +12,14 @@ Create a TraceRoute programs that displays RTT(round trip time) values for all b
 example: python3  myTraceRoute.py   www.google.ca
 
 ## A sample example:
-traceroute for google.ca (172.217.3.195)
-1        1.47        1.24          1.22          192.168.1.1 (192.168.1.1)
-2        2.62        3.03          2.78         192.168.0.1 (192.168.0.1)
-3        *            *                   *          
-4      19.09        *               15.08     something.vc.shawcable.net (44.95.113.113)
-5      44.43      19.68       17.10      rc4sj-pos0-8-5-0.cl.shawcable.net (66.163.76.66)
-6      (the rest are omitted, similar to above)
+traceroute for google.ca (172.217.3.195)  
+1   1.47        1.24          1.22          192.168.1.1 (192.168.1.1)  
+2   2.62        3.03          2.78         192.168.0.1 (192.168.0.1)  
+3    *          *              *       
+4  19.09        *            15.08     something.vc.shawcable.net (44.95.113.113)  
+5  44.43       19.68         17.10      rc4sj-pos0-8-5-0.cl.shawcable.net (66.163.76.66)  
+6  (the rest are omitted, similar to above)  
 
 ## Note:
-on MacOS and Linux, you need to run the above as sudo, so just add sudo at the beginning of the above.
+on MacOS and Linux, you need to run the above as sudo, so just add sudo at the beginning of the above.  
 on Windows, your network gateway firewall (or even your own computer firewall) may need to be set to allow the packets you generate/receive to go through. 
