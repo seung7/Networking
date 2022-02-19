@@ -25,7 +25,7 @@ if len(sys.argv) > 1:
 #convert the URL to IP address
 serverName=gethostbyname(serverURL)
 
-print "traceroute for %s (%s)" % (serverURL, serverName)
+print ("traceroute for %s (%s)" % (serverURL, serverName))
 
 #while loop stop when ttl = 30, or destination address has arrived
 while True:
@@ -66,7 +66,8 @@ while True:
             emptymessage, router_address = receiverSocket.recvfrom(1024)
             RTT_time[i] = (time.time()-initial_timer)*1000
         except:
-            RTT_time[i] = '*'
+            router_address = NULL
+	RTT_time[i] = '*'
         
         #close the sockets
         clientSocket.close()

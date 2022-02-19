@@ -47,6 +47,8 @@ while count>0 :
     
     count -=1
 
+#pause system for 10 seconds
+time.sleep(10)
 clientSocket.close()
 
 

@@ -23,3 +23,7 @@ traceroute for google.ca (172.217.3.195)
 ## Note:
 on MacOS and Linux, you need to run the above as sudo, so just add sudo at the beginning of the above.  
 on Windows, your network gateway firewall (or even your own computer firewall) may need to be set to allow the packets you generate/receive to go through. 
+
+##To run:
+To use my TraceRoute program to find the route to www.google.ca:
+python3(or py)  myTraceRoute.py   www.google.ca
