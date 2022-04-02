@@ -4,7 +4,7 @@ Create a TraceRoute programs that displays RTT(round trip time) values for all b
 
 ## Detail requirements:
 * Use socket module
-* Use ICMP protocol 
+* Send an empty UDP packet with TTL, and receive ICMP protocol 
 * It displays the routers' info along the way (one per line).
 * It calculates and displays 3 RTT values (ms) for each router (on the same line as the router info). If an RTT cannot be calculated within 4 seconds (a timeout), it should display a * (asterisk) instead for the RTT value and move on.
 * The maximum number of hopes in the path to search for the destination is 30 hops, after which (if reached) the program terminates with a message "max number of hops reached ... terminating". Otherwise, it terminates when it reaches the destination.
@@ -24,6 +24,14 @@ traceroute for google.ca (172.217.3.195)
 on MacOS and Linux, you need to run the above as sudo, so just add sudo at the beginning of the above.  
 on Windows, your network gateway firewall (or even your own computer firewall) may need to be set to allow the packets you generate/receive to go through. 
 
-##To run:
+## How does it work?
+By setting TTL(time to live), we can decide how many router can a UDP packet can pass. Everytime the packet arrived at a router, its TTL value is decreased by one. 
+Whenever TTL is expired, the router sends ICMP packet to the sender. ICMP packet contains router's IP address. So we can figure out IP address of routers.
+
+RTT(Round Trip Time) can be also calculated by utilizing python's time module. When sending the UDP packet, we measured the intial time. When ICMP packet is arrived, we measure the time once again. By deducting initial time from the arrived time, we can find its RTT.
+
+
+
+## To run:
 To use my TraceRoute program to find the route to www.google.ca:
 python3(or py)  myTraceRoute.py   www.google.ca
